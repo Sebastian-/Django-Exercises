@@ -17,3 +17,5 @@ A webpage displaying text stored in a database
 * Creating a view to list database items is done by subclassing Django's `ListView` class. Simply define the relevant `model` and `template_name` fields (as in `posts/views.py`), and the view will provide an `object_list` variable to the template. This list contains all of the models currently present in the database.
 
 * Iterating through items in a template can be done using `{% for <item> in <list> %} ... item.<field> ... {% endfor %}`. The HTML defined in the body of the loop will be repeated for each item in the list.
+
+* To test a site backed by a database, a testing database must be initialized. This can be done from any class subclassing Django's `TestCase` class, and is implemented within a function called `setUp`. Here, database models are initialized and can be used in subsequent tests.
